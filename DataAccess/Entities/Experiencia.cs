@@ -18,6 +18,6 @@ namespace DataAccess.Entities
 
         public int CandidatoId { get; set; }
 
-        public Candidato Candidato { get; set; }
+        public Candidato? Candidato { get; set; }
     }
 }

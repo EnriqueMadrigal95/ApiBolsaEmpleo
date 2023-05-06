@@ -11,5 +11,8 @@ namespace Services
     {
         public Task<List<Candidato>> GetAll();
         public Task<Candidato> Create(Candidato candidato);
+        public Task<Candidato> GetById(int id);
+        public Task Update(Candidato candidato);
+        public Task Delete(int id);
     }
 }

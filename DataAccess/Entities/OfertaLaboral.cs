@@ -16,6 +16,6 @@ namespace DataAccess.Entities
 
         //Relacion 
         public int EmpresaId { get; set; }
-        public Empresa Empresa { get; set; }
+        public Empresa? Empresa { get; set; }
     }
 }

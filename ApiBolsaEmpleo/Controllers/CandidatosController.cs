@@ -25,8 +25,19 @@ namespace ApiBolsaEmpleo.Controllers
 
             return Ok(listCandidatos);
         }
+        [HttpGet("{id}")]
 
-        // POST: api/Users
+        public async Task<ActionResult<Candidato>> GetById(int id)
+        {
+            var candidato = await _candidatoService.GetById(id);
+            if (candidato == null)
+            {
+                return NotFound();
+            }
+            return Ok(candidato);
+        }
+
+        // POST: api/Candidato_BolsaEmpleo
         [HttpPost]
         public async Task<ActionResult<Candidato>> Create(Candidato candidato)
         {
@@ -35,5 +46,32 @@ namespace ApiBolsaEmpleo.Controllers
 
             return Ok(createdCandidato);
         }
+
+        // Put: api/Candidato_BolsaEmpleo
+        [HttpPut("{id}")] 
+
+        public async Task<IActionResult> Update(Candidato candidato)
+        {
+            if (candidato == null)
+            {
+                return BadRequest();
+            }
+            await _candidatoService.Update(candidato);
+            return NoContent();
+        }
+        // Delete: api/Candidato_BolsaEmpleo
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var candidato = await _candidatoService.GetById(id);
+            if (candidato == null)
+            {
+                return NotFound();
+            }
+            await _candidatoService.Delete(id);
+            return NoContent();
+        }
+
     }
 }

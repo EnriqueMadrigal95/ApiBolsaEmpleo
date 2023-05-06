@@ -10,10 +10,10 @@ namespace DataAccess.Entities
     {
         public int Id { get; set; }
         public string? Nombre { get; set; }
-        public string Tipo { get; set; }
+        public string? Tipo { get; set; }
         
       
         public int CandidatoId { get; set; }
-        public Candidato Candidato { get; set;}
+        public Candidato? Candidato { get; set;}
     }
 }

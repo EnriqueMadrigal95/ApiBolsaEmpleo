@@ -12,11 +12,11 @@ namespace DataAccess.Entities
 
         public string? Nombre { get; set; }
 
-        public string? Correo_Electronico { get; set; }
+        public string? CorreoElectronico { get; set; }
 
-        public string? Num_Telefono { get; set; }
+        public string? NumTelefono { get; set; }
 
-        public string? Pagina_Web { get; set; }
+        public string? PaginaWeb { get; set; }
 
         public string? Direccion { get; set; }
 
